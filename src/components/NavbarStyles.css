@@ -1,0 +1,11 @@
+.navbar-brand{
+    color:  #333;
+}
+a{
+    color: #aaa;
+    font-weight: 400;
+}
+
+.active > a.active {
+    color: red !important;
+}

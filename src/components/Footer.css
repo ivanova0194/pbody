@@ -1,0 +1,17 @@
+
+.footer {
+  
+    position: fixed;
+    height:20px;
+    width:100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    border-top: double black;
+    background-color: rgb(130, 219, 150);
+    text-align: center;
+  
+
+  
+  }
