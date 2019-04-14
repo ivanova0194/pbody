@@ -28,7 +28,7 @@ const FormPage = () => {
             </div>
             <div className="text-center">
               <MDBBtn>Login</MDBBtn>
-              <a to='/'>Lost your password ?</a>
+              <a href='/'>Lost your password ?</a>
             </div>
           </form>
          

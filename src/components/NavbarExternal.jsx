@@ -1,33 +1,90 @@
   import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Navbar, Nav, NavItem, NavDropdown } from 'react-bootstrap';
-
-import './NavbarStyles.css';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 
 class NavbarExternal extends Component{
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
     render() {
         return (
-          <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/">Items</Nav.Link>
-              <NavDropdown title="Dropdown">
-                <NavDropdown.Item href="#action/3.1">Necklaces</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Earrings</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Bracelets</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Others</NavDropdown.Item>
-              </NavDropdown>
 
-              <Nav.Link href="/">Discount</Nav.Link>
-              <Nav.Link href="/">DYI</Nav.Link>
+<div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Online Jewelry</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/">Home</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                Items
+                </DropdownToggle>
+                <DropdownMenu right>
+                <DropdownItem>
+                  Necklaces
+                  </DropdownItem>
+                  <DropdownItem>
+                  Earrings
+                  </DropdownItem>
+                  <DropdownItem>
+                  Bracelets
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                  Others
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="/discount">Discount</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/diy">DIY</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/contactus">Contact us</NavLink>
+              </NavItem>
+
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Login
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem href="/login">
+                    Sign-in
+                  </DropdownItem>
+                  <DropdownItem href="/sign-up">
+                    Sign-up
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
             </Nav>
-            
-          </Navbar.Collapse>
+          </Collapse>
         </Navbar>
+      </div>
       );
     }
 }

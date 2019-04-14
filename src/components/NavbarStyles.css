@@ -1,9 +1,16 @@
 .navbar-brand{
     color:  #333;
+    padding:  30px;
+   
+    
+    
 }
 a{
     color: #aaa;
     font-weight: 400;
+    
+   
+    
 }
 
 .active > a.active {
